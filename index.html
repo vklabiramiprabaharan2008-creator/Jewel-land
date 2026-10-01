@@ -1,77 +1,104 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JEWEL LAND - Tirupathi | 916 Hallmark Jewellery</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEWEL LAND - Tirupathi Pro</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>body{font-family:'Poppins',sans-serif}.title{font-family:'Cinzel',serif}</style>
 </head>
 <body class="bg-[#fff8ec]">
 
-<!-- LIVE RATE -->
-<div class="bg-[#4a0f15] text-[#f5d98f] text-[11px] py-2 text-center">
-LIVE GOLD RATE • 22K: ₹6,720/g • 24K: ₹7,320/g • SILVER: ₹84/g • Updated: Today • BIS 916 Hallmark
+<div class="bg-[#4a0f15] text-[#f5d98f] text-[11px] py-2 text-center sticky top-0 z-50">
+LIVE RATE: 22K ₹6,720/g | 24K ₹7,320/g | Silver ₹84/g | Auto Update
 </div>
 
-<!-- HEADER -->
 <header class="bg-[#fff1db] p-4 flex justify-between items-center shadow">
-<h1 class="title text-xl text-[#4a0f15] font-bold">JEWEL LAND<br><span class="text-[10px] tracking-[0.4em]">TIRUPATHI</span></h1>
-<a href="https://wa.me/919876543210" class="bg-green-600 text-white px-3 py-1.5 rounded-full text-xs">WhatsApp</a>
+<h1 class="title text-xl text-[#4a0f15]">JEWEL LAND<br><span class="text-[10px] tracking-widest">TIRUPATHI • 916 HALLMARK</span></h1>
+<button onclick="document.getElementById('bill').scrollIntoView()" class="bg-[#4a0f15] text-[#f5d98f] px-4 py-2 rounded-full text-xs">Billing Calculator</button>
 </header>
 
-<!-- HERO -->
-<div class="bg-[#4a0f15] text-white p-8 text-center">
-<h2 class="title text-2xl text-[#f5d98f]">BRIDAL TEMPLE COLLECTION</h2>
-<p class="text-xs mt-2 opacity-80">Crafted for South Indian Bride | 916 Hallmark Certified</p>
-</div>
-
-<!-- CATALOGUE -->
+<!-- CATALOGUE WITH REAL PHOTOS -->
 <section class="p-4">
-<h3 class="title text-center text-[#4a0f15]">GOLD NECKLACE CATALOGUE</h3>
-<p class="text-center text-[11px] mb-4 text-gray-500">Weight mattum - Price ku WhatsApp pannunga</p>
+<h3 class="title text-center text-[#4a0f15] text-xl">BRIDAL TEMPLE COLLECTION - REAL PHOTOS</h3>
+<p class="text-center text-[11px] mb-4">Weight mattum - Click for price</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="cat"></div>
+</section>
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- BILLING SYSTEM -->
+<section id="bill" class="bg-white m-4 p-5 rounded-xl border-2 border-[#e9d5a8] shadow-lg">
+<h3 class="title text-[#4a0f15] text-center">💰 INSTANT BILL ESTIMATION</h3>
+<p class="text-[11px] text-center text-gray-500">Customer munnadi ye bill potu kaatalaam</p>
 
-<div class="bg-white border rounded-xl p-3 text-center">
-<div class="text-4xl">🪙</div>
-<h4 class="text-xs font-bold mt-2">Mahalakshmi Temple Necklace</h4>
-<p class="text-[11px] mt-1">Weight: <b>45.2g</b></p>
-<p class="text-[10px] text-amber-700">916 Hallmark</p>
-<a href="https://wa.me/919876543210?text=Hi%20JEWEL%20LAND!%20Mahalakshmi%20Temple%20Necklace%20(45.2g)%20price%20enna%3F" target="_blank" class="block mt-2 bg-[#4a0f15] text-[#f5d98f] py-2 rounded text-[11px]">💬 Get Price on WhatsApp</a>
+<div class="grid md:grid-cols-2 gap-4 mt-4 text-sm">
+<div>
+<label class="text-xs">Product / Weight (g)</label>
+<select id="prod" class="w-full border p-2 rounded mt-1" onchange="fillWeight()">
+<option value="45.2">Mahalakshmi Temple - 45.2g</option>
+<option value="32.8">Peacock Pearl - 32.8g</option>
+<option value="28.5">Ruby Choker - 28.5g</option>
+<option value="52.0">Kasu Mala - 52.0g</option>
+<option value="custom">Custom Weight</option>
+</select>
+<input id="wt" type="number" value="45.2" class="w-full border p-2 rounded mt-2" placeholder="Weight in grams">
+</div>
+<div>
+<label class="text-xs">Gold Rate & Making</label>
+<input id="rate" type="number" value="6720" class="w-full border p-2 rounded mt-1" placeholder="22K Rate per gram">
+<input id="mc" type="number" value="12" class="w-full border p-2 rounded mt-2" placeholder="Making Charge %">
+</div>
 </div>
 
-<div class="bg-white border rounded-xl p-3 text-center">
-<div class="text-4xl">🦚</div>
-<h4 class="text-xs font-bold mt-2">Peacock Pearl Necklace</h4>
-<p class="text-[11px] mt-1">Weight: <b>32.8g</b></p>
-<p class="text-[10px] text-amber-700">916 Hallmark</p>
-<a href="https://wa.me/919876543210?text=Hi%20JEWEL%20LAND!%20Peacock%20Pearl%20Necklace%20(32.8g)%20price%20enna%3F" target="_blank" class="block mt-2 bg-[#4a0f15] text-[#f5d98f] py-2 rounded text-[11px]">💬 Get Price on WhatsApp</a>
-</div>
+<button onclick="calc()" class="w-full bg-[#4a0f15] text-[#f5d98f] py-3 rounded-lg mt-4 font-bold">Calculate Total</button>
 
-<div class="bg-white border rounded-xl p-3 text-center">
-<div class="text-4xl">💎</div>
-<h4 class="text-xs font-bold mt-2">Ruby Antique Choker</h4>
-<p class="text-[11px] mt-1">Weight: <b>28.5g</b></p>
-<p class="text-[10px] text-amber-700">916 Hallmark</p>
-<a href="https://wa.me/919876543210?text=Hi%20JEWEL%20LAND!%20Ruby%20Choker%20(28.5g)%20price%20enna%3F" target="_blank" class="block mt-2 bg-[#4a0f15] text-[#f5d98f] py-2 rounded text-[11px]">💬 Get Price on WhatsApp</a>
-</div>
-
-<div class="bg-white border rounded-xl p-3 text-center">
-<div class="text-4xl">📿</div>
-<h4 class="text-xs font-bold mt-2">Kasu Mala Necklace</h4>
-<p class="text-[11px] mt-1">Weight: <b>52.0g</b></p>
-<p class="text-[10px] text-amber-700">916 Hallmark</p>
-<a href="https://wa.me/919876543210?text=Hi%20JEWEL%20LAND!%20Kasu%20Mala%20(52.0g)%20price%20enna%3F" target="_blank" class="block mt-2 bg-[#4a0f15] text-[#f5d98f] py-2 rounded text-[11px]">💬 Get Price on WhatsApp</a>
-</div>
-
+<div id="result" class="hidden mt-4 bg-[#fff8ec] p-4 rounded border text-sm">
+<p>Gold Value: <b id="gv"></b></p>
+<p>Making Charge (<span id="mcp"></span>%): <b id="mcv"></b></p>
+<p>GST (3%): <b id="gst"></b></p>
+<hr class="my-2">
+<p class="text-lg">TOTAL: <b id="total" class="text-[#4a0f15]"></b></p>
+<p class="text-[10px] text-gray-500 mt-1">*Approximate - Final price may vary</p>
+<a id="waBill" href="#" target="_blank" class="block text-center mt-3 bg-green-600 text-white py-2 rounded">Send Bill on WhatsApp</a>
 </div>
 </section>
 
-<footer class="bg-[#4a0f15] text-[#f5d98f] p-4 text-center text-[11px] mt-6">
-JEWEL LAND - Tirupathi | Bazaar Street, Tirumala Road | +91 98765 43210
-</footer>
-
+<script>
+const items=[
+{name:"Mahalakshmi Temple Necklace",wt:"45.2g",w:45.2,img:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=400"},
+{name:"Peacock Pearl Necklace",wt:"32.8g",w:32.8,img:"https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=400"},
+{name:"Ruby Antique Choker",wt:"28.5g",w:28.5,img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=400"},
+{name:"Kasu Mala Necklace",wt:"52.0g",w:52.0,img:"https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=400"},
+];
+const cat=document.getElementById('cat');
+items.forEach(it=>{
+  const msg=`Hi JEWEL LAND! ${it.name} (${it.wt}) price enna?`;
+  cat.innerHTML+=`<div class="bg-white rounded-xl overflow-hidden border shadow">
+  <img src="${it.img}" class="h-56 w-full object-cover">
+  <div class="p-3 text-center">
+  <h4 class="font-bold text-sm text-[#4a0f15]">${it.name}</h4>
+  <p class="text-xs">Weight: <b>${it.wt}</b> | 916 Hallmark</p>
+  <a href="https://wa.me/919876543210?text=${encodeURIComponent(msg)}" target="_blank" class="block mt-2 bg-[#4a0f15] text-[#f5d98f] py-2 rounded text-xs">💬 Get Price on WhatsApp</a>
+  </div></div>`;
+});
+function fillWeight(){const v=document.getElementById('prod').value;if(v!='custom')document.getElementById('wt').value=v;}
+function calc(){
+  const wt=parseFloat(document.getElementById('wt').value);
+  const rate=parseFloat(document.getElementById('rate').value);
+  const mcP=parseFloat(document.getElementById('mc').value);
+  const goldVal=wt*rate;
+  const mcVal=goldVal*mcP/100;
+  const sub=goldVal+mcVal;
+  const gst=sub*0.03;
+  const total=sub+gst;
+  document.getElementById('gv').innerText='₹'+goldVal.toLocaleString('en-IN');
+  document.getElementById('mcv').innerText='₹'+mcVal.toLocaleString('en-IN');
+  document.getElementById('mcp').innerText=mcP;
+  document.getElementById('gst').innerText='₹'+gst.toLocaleString('en-IN');
+  document.getElementById('total').innerText='₹'+total.toLocaleString('en-IN');
+  document.getElementById('result').classList.remove('hidden');
+  const billMsg=`JEWEL LAND Bill Estimation%0AWeight: ${wt}g%0ARate: ₹${rate}/g%0ATotal: ₹${total.toLocaleString('en-IN')}`;
+  document.getElementById('waBill').href=`https://wa.me/919876543210?text=${billMsg}`;
+}
+</script>
 </body>
-                                                        </html>
+</html>                                            </html>
